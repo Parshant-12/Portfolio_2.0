@@ -10,6 +10,7 @@ import Certifications from './Components/Certificates';
 import Contacts from './Components/Contact';
 import Footer from './Components/Footer';
 import Experience from './Components/Experience';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -81,6 +82,7 @@ function App() {
         <section id="Contacts"><Contacts /></section>
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }
