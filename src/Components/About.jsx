@@ -1,47 +1,114 @@
-import React from 'react'
+import React from 'react';
+import { Code, Trophy, GraduationCap, Terminal } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 function About() {
+  // Animation Configurations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // Delay between each element fading up
+        delayChildren: 0.1,    // Initial delay when the section comes into view
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
   return (
-    <div className='container m-auto h-auto flex flex-col justify-center items-center py-32'>
-      <div className=' text-white  text-center'>
-        <h1 className='text-4xl animate-infinite-glow'>ABOUT</h1>
-        <div className="w-36 h-0.5 mx-auto mt-1 bg-[#886fb8]"></div>
-        <p className='text-lg py-4'>I am a passionate and consistent competitive programmer, also specializing in web development and creating responsive and user-friendly websites. I am always eager to expand my skills and knowledge. I have experience with many languages given below and I continuously seek opportunities to grow and explore new technologies.</p>
+    <motion.div 
+      id="About" 
+      className='min-h-screen container mx-auto px-4 md:px-8 py-24 flex flex-col justify-center text-slate-900 dark:text-white'
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }} // Triggers when element is 100px inside the viewport
+    >
+      
+      {/* Section Header */}
+      <motion.div variants={itemVariants} className='w-full text-center lg:text-left mb-16'>
+        <h2 className='text-4xl font-extrabold tracking-tight'>
+          About <span className="text-[#9670df] dark:text-[#b28ff1]">Me</span>
+        </h2>
+        <div className="w-24 h-1 mt-4 bg-gradient-to-r from-[#9670df] to-transparent mx-auto lg:mx-0 rounded-full"></div>
+      </motion.div>
+
+      {/* Main Content Layout */}
+      <div className='flex flex-col lg:flex-row gap-16 items-center lg:items-start'>
+        
+        {/* Left Column: Narrative */}
+        <div className='lg:w-1/2 w-full space-y-6 text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-light'>
+          <motion.p variants={itemVariants}>
+            I am an undergraduate student pursuing a Bachelor of Technology in Artificial Intelligence and Data Science at Chandigarh Engineering College (CEC), Landran. I currently hold a CGPA of 8.18, graduating in 7th semester.
+          </motion.p>
+          <motion.p variants={itemVariants}>
+            My primary focus is on core software engineering fundamentals, full-stack development, and complex algorithmic problem-solving. I am highly active in competitive programming, dedicating my time to mastering Data Structures and Algorithms to build highly efficient and scalable technical solutions.
+          </motion.p>
+          <motion.p variants={itemVariants}>
+            I am currently seeking challenging roles in software development that will allow me to leverage my analytical problem-solving skills in a fast-paced engineering environment. 
+          </motion.p>
+        </div>
+
+        {/* Right Column: Key Metrics / Highlight Cards */}
+        <div className='lg:w-1/2 w-full grid grid-cols-1 md:grid-cols-2 gap-6'>
+          
+          {/* Card 1: LeetCode */}
+          <motion.div variants={itemVariants} className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#b28ff1] dark:hover:border-[#b28ff1] transition-colors duration-300 shadow-sm'>
+            <div className="text-[#9670df] dark:text-[#b28ff1] mb-4">
+              <Code size={32} />
+            </div>
+            <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-2'>1766 Max Rating</h3>
+            <p className='text-sm text-slate-600 dark:text-slate-400'>
+              Achieved top 10% global ranking on LeetCode.
+            </p>
+          </motion.div>
+
+          {/* Card 2: Codeforces */}
+          <motion.div variants={itemVariants} className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#b28ff1] dark:hover:border-[#b28ff1] transition-colors duration-300 shadow-sm'>
+            <div className="text-[#9670df] dark:text-[#b28ff1] mb-4">
+              <Terminal size={32} />
+            </div>
+            <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-2'>500+ Problems</h3>
+            <p className='text-sm text-slate-600 dark:text-slate-400'>
+              Solved across algorithmic concepts on Codeforces.
+            </p>
+          </motion.div>
+
+          {/* Card 3: Hackathon */}
+          <motion.div variants={itemVariants} className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#b28ff1] dark:hover:border-[#b28ff1] transition-colors duration-300 shadow-sm'>
+            <div className="text-[#9670df] dark:text-[#b28ff1] mb-4">
+              <Trophy size={32} />
+            </div>
+            <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-2'>1st Position</h3>
+            <p className='text-sm text-slate-600 dark:text-slate-400'>
+              Won National Science Day 2024 at CGC Landran.
+            </p>
+          </motion.div>
+
+          {/* Card 4: Academics */}
+          <motion.div variants={itemVariants} className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#b28ff1] dark:hover:border-[#b28ff1] transition-colors duration-300 shadow-sm'>
+            <div className="text-[#9670df] dark:text-[#b28ff1] mb-4">
+              <GraduationCap size={32} />
+            </div>
+            <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-2'>8.18 CGPA</h3>
+            <p className='text-sm text-slate-600 dark:text-slate-400'>
+              B.Tech Artificial Intelligence and Data Science.
+            </p>
+          </motion.div>
+
+        </div>
       </div>
-      <div className='pt-12 flex justify-center items-center gap-6 flex-wrap'>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/html.svg" alt="html" /><p className='text-white text-center pt-1 '>HTML</p>
-        </div>
-        <div className='border-2 border-[#886fb8] pb-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/css.svg" alt="html" /><p className='text-white text-center '>CSS</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/tailwind.svg" alt="html" /><p className='text-white text-center pt-1 '>Tailwind</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/javascript.svg" alt="html" /><p className='text-white text-center pt-1 '>Javascript</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/nodejs.svg" alt="html" /><p className='text-white text-center pt-1 '>Node.js</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/expressjs.svg" alt="html" /><p className='text-white text-center pt-1 '>Express.js</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/reactjs.svg" alt="html" /><p className='text-white text-center pt-1 '>React.js</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/nextjs.svg" alt="html" /><p className='text-white text-center pt-1 '>Next.js</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/cpp.svg" alt="html" /><p className='text-white text-center pt-1 '>C++</p>
-        </div>
-        <div className='border-2 border-[#886fb8] p-2 rounded-lg transition-all duration-200 hover:shadow-[0_0_20px_#886fb8] hover:scale-110'>
-          <img src="src/svg/python.svg" alt="html" /><p className='text-white text-center pt-1 '>Python</p>
-        </div>
-      </div>
-    </div>
-  )
+    </motion.div>
+  );
 }
 
-export default About
+export default About;

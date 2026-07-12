@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        kanit: ['Kanit', 'serif'], // Add Kanit font
+        kanit: ['Kanit', 'serif'],
       },
       animation: {
         'infinite-glow': 'glow 3s ease-in-out infinite',
