@@ -53,7 +53,7 @@ function LeetCode() {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.35 }}
+      viewport={{ once: true, amount: 0.25 }}
     >
       
       {/* Header */}

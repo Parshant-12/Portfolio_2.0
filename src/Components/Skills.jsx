@@ -25,7 +25,7 @@ function Skills() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.7, ease: "easeOut" }
     }
   };
 
@@ -124,7 +124,7 @@ function Skills() {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.13 }}
     >
       
       <motion.div variants={itemVariants} className='w-full text-center lg:text-left mb-16'>

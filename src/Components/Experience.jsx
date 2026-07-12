@@ -58,7 +58,7 @@ function Experience() {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.35 }}
+      viewport={{ once:false, amount: 0.15 }}
     >
       
       {/* Header */}
