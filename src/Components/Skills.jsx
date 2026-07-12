@@ -124,7 +124,7 @@ function Skills() {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.15 }}
     >
       
       <motion.div variants={itemVariants} className='w-full text-center lg:text-left mb-16'>

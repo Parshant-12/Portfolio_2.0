@@ -31,7 +31,7 @@ function About() {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }} // Triggers when element is 100px inside the viewport
+      viewport={{ once: true, margin: "-100px" }}
     >
       
       {/* Section Header */}
