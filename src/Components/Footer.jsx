@@ -1,5 +1,10 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react'; // Kept only for the back-to-top button
+import { ArrowUp } from 'lucide-react';
+import Linkedin from '../svg/linkedin.svg';
+import Github from '../svg/github.svg';
+import Discord from '../svg/discord.svg';
+import Instagram from '../svg/insta.svg';
+import X from '../svg/x.svg';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,31 +27,31 @@ function Footer() {
         <div className="flex items-center justify-center gap-6">
           <div className='hover:scale-125 transition-transform duration-200 invert dark:*:invert'>
             <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/parshantkumar1290/">
-              <img src="src/svg/linkedin.svg" alt="LinkedIn" className="w-8 h-8 object-contain" />
+              <img src={Linkedin} alt="LinkedIn" className="w-8 h-8 object-contain" />
             </a>
           </div>
           
           <div className='hover:scale-125 transition-transform duration-200 invert dark:*:invert'>
             <a target='_blank' rel="noreferrer" href="https://github.com/Parshant-12">
-              <img src="src/svg/github.svg" alt="GitHub" className="w-8 h-8 object-contain" />
+              <img src={Github} alt="GitHub" className="w-8 h-8 object-contain" />
             </a>
           </div>
           
           <div className='hover:scale-125 transition-transform duration-200 invert dark:*:invert'>
             <a target='_blank' rel="noreferrer" href="https://discord.gg/3KPT9RhA">
-              <img src="src/svg/discord.svg" alt="Discord" className="w-8 h-8 object-contain" />
+              <img src={Discord} alt="Discord" className="w-8 h-8 object-contain" />
             </a>
           </div>
           
           <div className='hover:scale-125 transition-transform duration-200 invert dark:*:invert'>
             <a target='_blank' rel="noreferrer" href="https://www.instagram.com/parshant_1290?igsh=MTd0Zmk0bDE4MXN5Zg==">
-              <img src="src/svg/insta.svg" alt="Instagram" className="w-8 h-8 object-contain" />
+              <img src={Instagram} alt="Instagram" className="w-8 h-8 object-contain" />
             </a>
           </div>
           
           <div className='hover:scale-125 transition-transform duration-200 invert dark:*:invert'>
             <a target='_blank' rel="noreferrer" href="https://x.com/Parshant1290">
-              <img src="src/svg/x.svg" alt="X" className="w-8 h-8 object-contain" />
+              <img src={X} alt="X" className="w-8 h-8 object-contain" />
             </a>
           </div>
         </div>

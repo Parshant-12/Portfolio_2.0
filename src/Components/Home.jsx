@@ -2,7 +2,7 @@ import React from 'react';
 import { ReactTyped } from "react-typed";
 import { Download } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import Photo from '../img/51.png';
 function Home() {
     const onButtonClick = () => {
         const pdfUrl = "https://drive.google.com/file/d/1SXmDjmH9x5Ju3LiuQ6ZYipRMnL_SyxOZ/view?usp=sharing";
@@ -123,7 +123,7 @@ function Home() {
 
                     <img
                         className='relative z-10 w-full object-cover rounded-full'
-                        src="src/img/51.png"
+                        src={Photo}
                         alt="Parshant Kumar"
                     />
                 </div>
