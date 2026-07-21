@@ -99,7 +99,7 @@ function About() {
             <div className="text-[#9670df] dark:text-[#b28ff1] mb-4">
               <GraduationCap size={32} />
             </div>
-            <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-2'>8.18 CGPA</h3>
+            <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-2'>8.5 CGPA</h3>
             <p className='text-sm text-slate-600 dark:text-slate-400'>
               B.Tech Artificial Intelligence and Data Science.
             </p>
